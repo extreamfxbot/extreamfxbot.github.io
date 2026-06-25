@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtreamFX Bot | Automated Forex Trading</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
+        .btn { background: #00d4ff; color: #1a1a2e; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: transform 0.3s; }
+        .btn:hover { transform: scale(1.05); }
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature { background: #f8f9fa; padding: 30px; border-radius: 15px; text-align: center; }
+        .feature h3 { font-size: 1.5rem; margin-bottom: 15px; color: #1a1a2e; }
+        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .price-card { background: white; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .price-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .price-card.popular { border-color: #00d4ff; position: relative; }
+        .price-card.popular::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #00d4ff; color: #1a1a2e; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .price { font-size: 3rem; font-weight: bold; color: #1a1a2e; }
+        .price span { font-size: 1rem; color: #666; }
+        .results { background: #1a1a2e; color: white; border-radius: 15px; padding: 50px; margin: 50px auto; max-width: 1000px; }
+        .results h2 { color: white; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; margin-top: 40px; }
+        .stat h3 { font-size: 3rem; color: #00d4ff; }
+        .faq { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
+        .faq-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .cta { background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); color: white; text-align: center; padding: 80px 20px; }
+        .cta h2 { color: white; margin-bottom: 20px; }
+        .cta .btn { background: white; color: #1a1a2e; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 30px; }
+        .disclaimer { font-size: 0.8rem; color: #666; max-width: 800px; margin: 50px auto 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>ExtreamFX Bot</h1>
+        <p>Automated forex trading powered by AI. We trade your account while you sleep. 25%+ monthly returns.</p>
+        <a href="#pricing" class="btn">Get Started Now</a>
+    </div>
+
+    <div class="section">
+        <h2>How It Works</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>1. Connect Your Account</h3>
+                <p>Give us your OANDA account number and API key. We handle the rest. Your money stays in YOUR account.</p>
+            </div>
+            <div class="feature">
+                <h3>2. Bot Trades For You</h3>
+                <p>Our AI bot analyzes 18 currency pairs 24/7. It enters winning trades and cuts losers fast.</p>
+            </div>
+            <div class="feature">
+                <h3>3. Watch Profits Grow</h3>
+                <p>Log into your OANDA account anytime to see your balance grow. No hidden fees. No surprises.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Why ExtreamFX Bot?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>25%+ Monthly Returns</h3>
+                <p>Backtested and live-traded results show consistent 25%+ monthly returns.</p>
+            </div>
+            <div class="feature">
+                <h3>Automated 24/7</h3>
+                <p>Bot runs while you sleep. No manual trading. No emotions. Just results.</p>
+            </div>
+            <div class="feature">
+                <h3>Risk Management Built-In</h3>
+                <p>Every trade has a stop loss. Maximum 2% risk per trade. Your account is protected.</p>
+            </div>
+            <div class="feature">
+                <h3>Scale-In Strategy</h3>
+                <p>Bot enters small, confirms the trend, then scales in for maximum profit.</p>
+            </div>
+            <div class="feature">
+                <h3>18 Currency Pairs</h3>
+                <p>Bot scans all major pairs to find the best opportunities every day.</p>
+            </div>
+            <div class="feature">
+                <h3>Transparent Results</h3>
+                <p>See every trade in your OANDA account. No black box. Full visibility.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="results">
+            <h2>Live Results</h2>
+            <p>Verified performance since launch</p>
+            <div class="stats">
+                <div class="stat">
+                    <h3>48%</h3>
+                    <p>Win Rate</p>
+                </div>
+                <div class="stat">
+                    <h3>2.27</h3>
+                    <p>Profit Factor</p>
+                </div>
+                <div class="stat">
+                    <h3>25%</h3>
+                    <p>Monthly Return</p>
+                </div>
+                <div class="stat">
+                    <h3>5.9%</h3>
+                    <p>Max Drawdown</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="pricing">
+        <h2>Pricing</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Pay based on your account size. We grow when you grow.</p>
+        <div class="pricing">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <p>Accounts under $1,000</p>
+                <div class="price">$49<span>/month</span></div>
+                <ul style="list-style: none; margin: 20px 0; text-align: left;">
+                    <li>✓ Full bot access</li>
+                    <li>✓ 18 currency pairs</li>
+                    <li>✓ 24/7 automated trading</li>
+                    <li>✓ Email support</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; text-align: center;">Get Started</a>
+            </div>
+            <div class="price-card popular">
+                <h3>Pro</h3>
+                <p>Accounts $1,000 - $10,000</p>
+                <div class="price">$97<span>/month</span></div>
+                <ul style="list-style: none; margin: 20px 0; text-align: left;">
+                    <li>✓ Everything in Starter</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Trade alerts via Telegram</li>
+                    <li>✓ Monthly performance report</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; text-align: center;">Get Started</a>
+            </div>
+            <div class="price-card">
+                <h3>Elite</h3>
+                <p>Accounts $10,000 - $50,000</p>
+                <div class="price">$197<span>/month</span></div>
+                <ul style="list-style: none; margin: 20px 0; text-align: left;">
+                    <li>✓ Everything in Pro</li>
+                    <li>✓ 1-on-1 setup call</li>
+                    <li>✓ Custom risk settings</li>
+                    <li>✓ Direct Telegram support</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; text-align: center;">Get Started</a>
+            </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <p>Accounts $50,000+</p>
+                <div class="price">$297<span>/month</span></div>
+                <ul style="list-style: none; margin: 20px 0; text-align: left;">
+                    <li>✓ Everything in Elite</li>
+                    <li>✓ Dedicated account manager</li>
+                    <li>✓ Custom strategy tweaks</li>
+                    <li>✓ API access</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; text-align: center;">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>Is my money safe?</h4>
+            <p>Yes. Your money stays in YOUR OANDA account at all times. We never have withdrawal access. We can only place trades.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I connect my account?</h4>
+            <p>After signing up, we'll guide you through getting your OANDA account number and API key. Takes 5 minutes.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I stop anytime?</h4>
+            <p>Yes. Cancel anytime. No contracts. No commitments. You're in control.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What if I lose money?</h4>
+            <p>Every trade has a stop loss. Maximum risk is 2% per trade. Most losing trades lose less than 1%.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I see my results?</h4>
+            <p>Log into your OANDA account anytime. You see every trade in real-time. Full transparency.</p>
+        </div>
+    </div>
+
+    <div class="cta" id="contact">
+        <h2>Ready to Start?</h2>
+        <p>Join hundreds of traders using ExtreamFX Bot</p>
+        <br>
+        <a href="https://t.me/ExtreamSPXalertsbot" class="btn">Contact Us on Telegram</a>
+        <p style="margin-top: 20px; opacity: 0.8;">Or email: your@email.com</p>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> Trading forex carries risk. Past performance does not guarantee future results. You could lose some or all of your investment. ExtreamFX Bot is not a financial advisor. Use at your own risk.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ExtreamFX Bot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
