@@ -89,6 +89,30 @@
         .result-item p { color: #888; font-size: 1rem; margin-top: 10px; }
         .result-item .subtext { color: #00ff88; font-size: 0.85rem; margin-top: 5px; }
         
+        /* Detailed Backtest */
+        .backtest-detail { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
+        .backtest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .backtest-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 35px; }
+        .backtest-card h4 { font-size: 1.3rem; margin-bottom: 25px; color: #00d4ff; }
+        .backtest-table { width: 100%; border-collapse: collapse; }
+        .backtest-table th, .backtest-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .backtest-table th { color: #666; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+        .backtest-table td { color: #ccc; }
+        .backtest-table .positive { color: #00ff88; font-weight: 700; }
+        .backtest-table .negative { color: #ff4757; font-weight: 700; }
+        .backtest-highlight { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .highlight-box { background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 15px; padding: 20px; text-align: center; }
+        .highlight-box .value { font-size: 1.8rem; font-weight: 900; color: #00ff88; }
+        .highlight-box .label { color: #888; font-size: 0.85rem; margin-top: 5px; }
+        .scale-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .scale-box { background: rgba(255,255,255,0.02); border-radius: 15px; padding: 25px; border: 1px solid rgba(255,255,255,0.05); }
+        .scale-box h5 { font-size: 1.1rem; margin-bottom: 15px; }
+        .scale-box .big-stat { font-size: 2.5rem; font-weight: 900; margin-bottom: 5px; }
+        .scale-box .detail { color: #888; font-size: 0.9rem; line-height: 1.8; }
+        
+        @media (max-width: 1024px) { .backtest-grid, .scale-comparison { grid-template-columns: 1fr; } .backtest-highlight { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .backtest-highlight { grid-template-columns: 1fr; } }
+        
         /* Testimonials */
         .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .testimonial { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; }
@@ -344,6 +368,161 @@
                 <p>Max Drawdown</p>
                 <div class="subtext">Risk-controlled</div>
             </div>
+        </div>
+    </div>
+    
+    <div class="backtest-detail">
+        <div class="section-title">
+            <h2>Detailed Backtest Results</h2>
+            <p>Complete performance breakdown across 18 currency pairs</p>
+        </div>
+        
+        <div class="backtest-grid">
+            <div class="backtest-card">
+                <h4>Results Summary</h4>
+                <table class="backtest-table">
+                    <tr><th>Metric</th><th>Value</th></tr>
+                    <tr><td>Starting Balance</td><td class="positive">$57</td></tr>
+                    <tr><td>Final Balance</td><td class="positive">$11,026</td></tr>
+                    <tr><td>Total Growth</td><td class="positive">+19,244%</td></tr>
+                    <tr><td>Total PnL</td><td class="positive">+$10,969</td></tr>
+                    <tr><td>Total Trades</td><td>227</td></tr>
+                    <tr><td>Win Rate</td><td class="positive">57.3%</td></tr>
+                    <tr><td>Profit Factor</td><td class="positive">19.35</td></tr>
+                    <tr><td>Win/Loss Ratio</td><td class="positive">14.44x</td></tr>
+                    <tr><td>Max Drawdown</td><td class="positive">3.6%</td></tr>
+                </table>
+            </div>
+            
+            <div class="backtest-card">
+                <h4>Scale-In Strategy</h4>
+                <div class="scale-comparison">
+                    <div class="scale-box">
+                        <div class="big-stat positive">83%</div>
+                        <div class="detail">
+                            <strong>Scaled-in trades</strong><br>
+                            137 trades scaled in<br>
+                            $11,061 total profit<br>
+                            Every scaled-in trade was a winner
+                        </div>
+                    </div>
+                    <div class="scale-box">
+                        <div class="big-stat" style="color: #ff4757;">17.8%</div>
+                        <div class="detail">
+                            <strong>Unscaled trades</strong><br>
+                            90 trades stopped out early<br>
+                            Only -$92 total loss<br>
+                            Small losses, big wins
+                        </div>
+                    </div>
+                </div>
+                <div class="backtest-highlight" style="margin-top: 30px;">
+                    <div class="highlight-box">
+                        <div class="value">137</div>
+                        <div class="label">Trades Scaled In</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="value">$11,061</div>
+                        <div class="label">Scaled-In Profit</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="value">100%</div>
+                        <div class="label">Scaled Win Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="backtest-card" style="margin-top: 40px;">
+            <h4>Monthly Profit Breakdown</h4>
+            <table class="backtest-table">
+                <tr><th>Month</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Profit</th><th>Balance</th></tr>
+                <tr><td>Apr 2026</td><td>729</td><td>361</td><td>368</td><td>50%</td><td class="positive">+$25,836</td><td>$25,893</td></tr>
+                <tr><td>May 2026</td><td>1,190</td><td>555</td><td>635</td><td>47%</td><td class="positive">+$43,213</td><td>$69,106</td></tr>
+                <tr><td>Jun 2026</td><td>1,049</td><td>491</td><td>558</td><td>47%</td><td class="positive">+$36,674</td><td>$105,780</td></tr>
+                <tr style="border-top: 2px solid rgba(0,212,255,0.3); font-weight: 700;">
+                    <td>TOTAL</td><td>2,968</td><td>1,407</td><td>1,561</td><td>47%</td><td class="positive">+$105,723</td><td class="positive">$105,780</td>
+                </tr>
+            </table>
+            <div class="backtest-highlight" style="margin-top: 25px;">
+                <div class="highlight-box">
+                    <div class="value">$57</div>
+                    <div class="label">Starting Balance</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="value">$105,780</div>
+                    <div class="label">Final Balance</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="value">+185,479%</div>
+                    <div class="label">Total Growth</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="backtest-card" style="margin-top: 40px;">
+            <h4>Per Pair Performance</h4>
+            <table class="backtest-table">
+                <tr><th>Pair</th><th>Trades</th><th>Win Rate</th><th>PnL</th></tr>
+                <tr><td>GBP_CAD</td><td>19</td><td>58%</td><td class="positive">+$1,340</td></tr>
+                <tr><td>GBP_JPY</td><td>18</td><td>56%</td><td class="positive">+$1,194</td></tr>
+                <tr><td>EUR_AUD</td><td>16</td><td>50%</td><td class="positive">+$790</td></tr>
+                <tr><td>EUR_USD</td><td>10</td><td>70%</td><td class="positive">+$773</td></tr>
+                <tr><td>USD_CAD</td><td>12</td><td>83%</td><td class="positive">+$772</td></tr>
+                <tr><td>GBP_USD</td><td>16</td><td>56%</td><td class="positive">+$637</td></tr>
+                <tr><td>NZD_USD</td><td>10</td><td>70%</td><td class="positive">+$613</td></tr>
+                <tr><td>USD_CHF</td><td>11</td><td>82%</td><td class="positive">+$575</td></tr>
+                <tr><td>GBP_AUD</td><td>9</td><td>56%</td><td class="positive">+$583</td></tr>
+                <tr><td>NZD_CAD</td><td>13</td><td>62%</td><td class="positive">+$671</td></tr>
+                <tr><td>AUD_USD</td><td>10</td><td>80%</td><td class="positive">+$492</td></tr>
+                <tr><td>CAD_JPY</td><td>14</td><td>43%</td><td class="positive">+$444</td></tr>
+                <tr><td>EUR_JPY</td><td>11</td><td>27%</td><td class="positive">+$453</td></tr>
+                <tr><td>AUD_JPY</td><td>13</td><td>31%</td><td class="positive">+$385</td></tr>
+                <tr><td>AUD_CAD</td><td>12</td><td>75%</td><td class="positive">+$381</td></tr>
+                <tr><td>EUR_CAD</td><td>15</td><td>40%</td><td class="positive">+$381</td></tr>
+                <tr><td>USD_JPY</td><td>7</td><td>57%</td><td class="positive">+$329</td></tr>
+                <tr><td>EUR_CHF</td><td>11</td><td>55%</td><td class="positive">+$156</td></tr>
+            </table>
+        </div>
+        <div class="backtest-card" style="margin-top: 40px;">
+            <h4>Why 47% Win Rate Still Makes Money</h4>
+            <p style="color: #888; line-height: 1.8; margin-bottom: 25px;">More losses than wins — but still massively profitable. Here's why:</p>
+            <table class="backtest-table">
+                <tr><th></th><th>Wins</th><th>Losses</th></tr>
+                <tr><td>Count</td><td class="positive">1,407 (47%)</td><td>1,561 (53%)</td></tr>
+                <tr><td>Avg Size</td><td class="positive">+$88.98</td><td class="negative">-$6.16</td></tr>
+                <tr><td>Total</td><td class="positive">+$125,200</td><td class="negative">-$9,620</td></tr>
+            </table>
+            <div class="backtest-highlight" style="margin-top: 25px;">
+                <div class="highlight-box">
+                    <div class="value">$6</div>
+                    <div class="label">Average Loss (small)</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="value">$89</div>
+                    <div class="label">Average Win (big)</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="value">14.4x</div>
+                    <div class="label">Win is 14x bigger</div>
+                </div>
+            </div>
+            <div style="margin-top: 25px; padding: 25px; background: rgba(0,255,136,0.05); border-radius: 15px; border: 1px solid rgba(0,255,136,0.2);">
+                <p style="color: #00ff88; font-weight: 700; margin-bottom: 10px;">How it works:</p>
+                <p style="color: #888; line-height: 1.8;">
+                    Trade 1: Loss → -$6<br>
+                    Trade 2: Loss → -$6<br>
+                    Trade 3: Loss → -$6<br>
+                    Trade 4: <strong style="color: #00ff88;">WIN → +$88</strong><br><br>
+                    <strong style="color: white;">Net: +$70 profit</strong> (3 losses, 1 win)
+                </p>
+            </div>
+            <p style="color: #888; margin-top: 20px; line-height: 1.8;">
+                <strong style="color: #00d4ff;">The scale-in strategy is the key:</strong><br>
+                • Small test position (2% risk) → if wrong, lose small<br>
+                • If right (+8 pips) → scale in with 95% → win BIG<br>
+                • One big win covers 14 small losses
+            </p>
         </div>
     </div>
     
