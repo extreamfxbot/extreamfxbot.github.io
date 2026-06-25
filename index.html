@@ -614,8 +614,31 @@
             <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Submit Application</button>
         </form>
         
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(0, 255, 136, 0.1); border-radius: 15px; border: 1px solid rgba(0, 255, 136, 0.3);">
-            <p style="color: #00ff88; font-size: 1.1rem;">✓ After submitting, we'll email you payment instructions within 24 hours</p>
+        <div style="text-align: center; margin-top: 40px; padding: 40px; background: rgba(0, 212, 255, 0.05); border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.2);">
+            <p style="color: #00d4ff; font-size: 1.2rem; margin-bottom: 20px; font-weight: 600;">Step 2: Complete Your Subscription</p>
+            <p style="color: #888; margin-bottom: 30px;">After filling out the form above, click below to subscribe and start trading.</p>
+            <div id="paypal-button-container-P-5JR55355E1268592WNI6I4RA"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=BAAl2bywrJJ2QlWHDMyHgH24FvBxz_XD9t4ek5duC7Bqn1bWSdeFKD5RKW7I6BxDeVEajlLXvyhikLmrwo&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+            <script>
+              paypal.Buttons({
+                  style: {
+                      shape: 'rect',
+                      color: 'blue',
+                      layout: 'vertical',
+                      label: 'subscribe'
+                  },
+                  createSubscription: function(data, actions) {
+                    return actions.subscription.create({
+                      plan_id: 'P-5JR55355E1268592WNI6I4RA',
+                      quantity: 1
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    alert('Subscription successful! We\'ll add your account within 24 hours.');
+                  }
+              }).render('#paypal-button-container-P-5JR55355E1268592WNI6I4RA');
+            </script>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 20px;">✓ Cancel anytime. No contracts.</p>
         </div>
     </section>
     
